@@ -1,0 +1,1386 @@
+{
+  "name": "Explorer2",
+  "displayName": "Explorer2",
+  "description": "Explorer2",
+  "version": "0.0.2",
+  "publisher": "LeoBraine",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Leo-Braine/explorer2"
+  },
+  "engines": {
+    "vscode": "^1.66.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:explorer2",
+    "onView:favorites",
+    "onView:opened"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Explorer2",
+      "properties": {
+        "explorer2.openFolder": {
+          "type": "string",
+          "default": "singleClick",
+          "enum": [
+            "singleClick",
+            "doubleClick"
+          ],
+          "enumDescriptions": [
+            "Single click",
+            "Double click"
+          ]
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "explorer2",
+          "title": "Explorer2",
+          "icon": "media/f.png"
+        }
+      ]
+    },
+    "views": {
+      "explorer2": [
+        {
+          "id": "favorites",
+          "name": "Favorites",
+          "contextualTitle": "Favorites"
+        },
+        {
+          "id": "opened",
+          "name": "Opened",
+          "contextualTitle": "Opened"
+        },
+        {
+          "id": "explorer2",
+          "name": "Explorer2",
+          "contextualTitle": "Explorer2"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "a_few_seconds_ago",
+        "title": "a few seconds ago"
+      },
+      {
+        "command": "a_minute_ago",
+        "title": "a minute ago"
+      },
+      {
+        "command": "2_minutes_ago",
+        "title": "2 minutes ago"
+      },
+      {
+        "command": "3_minutes_ago",
+        "title": "3 minutes ago"
+      },
+      {
+        "command": "4_minutes_ago",
+        "title": "4 minutes ago"
+      },
+      {
+        "command": "5_minutes_ago",
+        "title": "5 minutes ago"
+      },
+      {
+        "command": "6_minutes_ago",
+        "title": "6 minutes ago"
+      },
+      {
+        "command": "7_minutes_ago",
+        "title": "7 minutes ago"
+      },
+      {
+        "command": "8_minutes_ago",
+        "title": "8 minutes ago"
+      },
+      {
+        "command": "9_minutes_ago",
+        "title": "9 minutes ago"
+      },
+      {
+        "command": "10_minutes_ago",
+        "title": "10 minutes ago"
+      },
+      {
+        "command": "11_minutes_ago",
+        "title": "11 minutes ago"
+      },
+      {
+        "command": "12_minutes_ago",
+        "title": "12 minutes ago"
+      },
+      {
+        "command": "13_minutes_ago",
+        "title": "13 minutes ago"
+      },
+      {
+        "command": "14_minutes_ago",
+        "title": "14 minutes ago"
+      },
+      {
+        "command": "15_minutes_ago",
+        "title": "15 minutes ago"
+      },
+      {
+        "command": "16_minutes_ago",
+        "title": "16 minutes ago"
+      },
+      {
+        "command": "17_minutes_ago",
+        "title": "17 minutes ago"
+      },
+      {
+        "command": "18_minutes_ago",
+        "title": "18 minutes ago"
+      },
+      {
+        "command": "19_minutes_ago",
+        "title": "19 minutes ago"
+      },
+      {
+        "command": "20_minutes_ago",
+        "title": "20 minutes ago"
+      },
+      {
+        "command": "21_minutes_ago",
+        "title": "21 minutes ago"
+      },
+      {
+        "command": "22_minutes_ago",
+        "title": "22 minutes ago"
+      },
+      {
+        "command": "23_minutes_ago",
+        "title": "23 minutes ago"
+      },
+      {
+        "command": "24_minutes_ago",
+        "title": "24 minutes ago"
+      },
+      {
+        "command": "25_minutes_ago",
+        "title": "25 minutes ago"
+      },
+      {
+        "command": "26_minutes_ago",
+        "title": "26 minutes ago"
+      },
+      {
+        "command": "27_minutes_ago",
+        "title": "27 minutes ago"
+      },
+      {
+        "command": "28_minutes_ago",
+        "title": "28 minutes ago"
+      },
+      {
+        "command": "29_minutes_ago",
+        "title": "29 minutes ago"
+      },
+      {
+        "command": "30_minutes_ago",
+        "title": "30 minutes ago"
+      },
+      {
+        "command": "31_minutes_ago",
+        "title": "31 minutes ago"
+      },
+      {
+        "command": "32_minutes_ago",
+        "title": "32 minutes ago"
+      },
+      {
+        "command": "33_minutes_ago",
+        "title": "33 minutes ago"
+      },
+      {
+        "command": "34_minutes_ago",
+        "title": "34 minutes ago"
+      },
+      {
+        "command": "35_minutes_ago",
+        "title": "35 minutes ago"
+      },
+      {
+        "command": "36_minutes_ago",
+        "title": "36 minutes ago"
+      },
+      {
+        "command": "37_minutes_ago",
+        "title": "37 minutes ago"
+      },
+      {
+        "command": "38_minutes_ago",
+        "title": "38 minutes ago"
+      },
+      {
+        "command": "39_minutes_ago",
+        "title": "39 minutes ago"
+      },
+      {
+        "command": "40_minutes_ago",
+        "title": "40 minutes ago"
+      },
+      {
+        "command": "41_minutes_ago",
+        "title": "41 minutes ago"
+      },
+      {
+        "command": "42_minutes_ago",
+        "title": "42 minutes ago"
+      },
+      {
+        "command": "43_minutes_ago",
+        "title": "43 minutes ago"
+      },
+      {
+        "command": "44_minutes_ago",
+        "title": "44 minutes ago"
+      },
+      {
+        "command": "an_hour_ago",
+        "title": "an hour ago"
+      },
+      {
+        "command": "2_hours_ago",
+        "title": "2 hours ago"
+      },
+      {
+        "command": "3_hours_ago",
+        "title": "3 hours ago"
+      },
+      {
+        "command": "4_hours_ago",
+        "title": "4 hours ago"
+      },
+      {
+        "command": "5_hours_ago",
+        "title": "5 hours ago"
+      },
+      {
+        "command": "6_hours_ago",
+        "title": "6 hours ago"
+      },
+      {
+        "command": "7_hours_ago",
+        "title": "7 hours ago"
+      },
+      {
+        "command": "8_hours_ago",
+        "title": "8 hours ago"
+      },
+      {
+        "command": "9_hours_ago",
+        "title": "9 hours ago"
+      },
+      {
+        "command": "10_hours_ago",
+        "title": "10 hours ago"
+      },
+      {
+        "command": "11_hours_ago",
+        "title": "11 hours ago"
+      },
+      {
+        "command": "12_hours_ago",
+        "title": "12 hours ago"
+      },
+      {
+        "command": "13_hours_ago",
+        "title": "13 hours ago"
+      },
+      {
+        "command": "14_hours_ago",
+        "title": "14 hours ago"
+      },
+      {
+        "command": "15_hours_ago",
+        "title": "15 hours ago"
+      },
+      {
+        "command": "16_hours_ago",
+        "title": "16 hours ago"
+      },
+      {
+        "command": "17_hours_ago",
+        "title": "17 hours ago"
+      },
+      {
+        "command": "18_hours_ago",
+        "title": "18 hours ago"
+      },
+      {
+        "command": "19_hours_ago",
+        "title": "19 hours ago"
+      },
+      {
+        "command": "20_hours_ago",
+        "title": "20 hours ago"
+      },
+      {
+        "command": "21_hours_ago",
+        "title": "21 hours ago"
+      },
+      {
+        "command": "a_day_ago",
+        "title": "a day ago"
+      },
+      {
+        "command": "2_days_ago",
+        "title": "2 days ago"
+      },
+      {
+        "command": "3_days_ago",
+        "title": "3 days ago"
+      },
+      {
+        "command": "4_days_ago",
+        "title": "4 days ago"
+      },
+      {
+        "command": "5_days_ago",
+        "title": "5 days ago"
+      },
+      {
+        "command": "6_days_ago",
+        "title": "6 days ago"
+      },
+      {
+        "command": "7_days_ago",
+        "title": "7 days ago"
+      },
+      {
+        "command": "8_days_ago",
+        "title": "8 days ago"
+      },
+      {
+        "command": "9_days_ago",
+        "title": "9 days ago"
+      },
+      {
+        "command": "10_days_ago",
+        "title": "10 days ago"
+      },
+      {
+        "command": "11_days_ago",
+        "title": "11 days ago"
+      },
+      {
+        "command": "12_days_ago",
+        "title": "12 days ago"
+      },
+      {
+        "command": "13_days_ago",
+        "title": "13 days ago"
+      },
+      {
+        "command": "14_days_ago",
+        "title": "14 days ago"
+      },
+      {
+        "command": "15_days_ago",
+        "title": "15 days ago"
+      },
+      {
+        "command": "16_days_ago",
+        "title": "16 days ago"
+      },
+      {
+        "command": "17_days_ago",
+        "title": "17 days ago"
+      },
+      {
+        "command": "18_days_ago",
+        "title": "18 days ago"
+      },
+      {
+        "command": "19_days_ago",
+        "title": "19 days ago"
+      },
+      {
+        "command": "20_days_ago",
+        "title": "20 days ago"
+      },
+      {
+        "command": "21_days_ago",
+        "title": "21 days ago"
+      },
+      {
+        "command": "22_days_ago",
+        "title": "22 days ago"
+      },
+      {
+        "command": "23_days_ago",
+        "title": "23 days ago"
+      },
+      {
+        "command": "24_days_ago",
+        "title": "24 days ago"
+      },
+      {
+        "command": "25_days_ago",
+        "title": "25 days ago"
+      },
+      {
+        "command": "a_month_ago",
+        "title": "a month ago"
+      },
+      {
+        "command": "2_months_ago",
+        "title": "2 months ago"
+      },
+      {
+        "command": "3_months_ago",
+        "title": "3 months ago"
+      },
+      {
+        "command": "4_months_ago",
+        "title": "4 months ago"
+      },
+      {
+        "command": "5_months_ago",
+        "title": "5 months ago"
+      },
+      {
+        "command": "6_months_ago",
+        "title": "6 months ago"
+      },
+      {
+        "command": "7_months_ago",
+        "title": "7 months ago"
+      },
+      {
+        "command": "8_months_ago",
+        "title": "8 months ago"
+      },
+      {
+        "command": "9_months_ago",
+        "title": "9 months ago"
+      },
+      {
+        "command": "10_months_ago",
+        "title": "10 months ago"
+      },
+      {
+        "command": "a_year_ago",
+        "title": "a year ago"
+      },
+      {
+        "command": "2_years_ago",
+        "title": "2 years ago"
+      },
+      {
+        "command": "3_years_ago",
+        "title": "3 years ago"
+      },
+      {
+        "command": "4_years_ago",
+        "title": "4 years ago"
+      },
+      {
+        "command": "5_years_ago",
+        "title": "5 years ago"
+      },
+      {
+        "command": "6_years_ago",
+        "title": "6 years ago"
+      },
+      {
+        "command": "7_years_ago",
+        "title": "7 years ago"
+      },
+      {
+        "command": "8_years_ago",
+        "title": "8 years ago"
+      },
+      {
+        "command": "9_years_ago",
+        "title": "9 years ago"
+      },
+      {
+        "command": "many_years_ago",
+        "title": "many years ago"
+      },
+      {
+        "command": "opened.delFromOpened",
+        "title": "delFromOpened",
+        "icon": "$(search-remove)"
+      },
+      {
+        "command": "explorer2.addToFavorites",
+        "title": "Add to favorite"
+      },
+      {
+        "command": "opened.addToFavorites",
+        "title": "Add to favorite"
+      },
+      {
+        "command": "explorer2.newFolder",
+        "title": "New folder"
+      },
+      {
+        "command": "explorer2.newFile",
+        "title": "New file"
+      },
+      {
+        "command": "explorer2.delete",
+        "title": "Move to Bin"
+      },
+      {
+        "command": "explorer2.rename",
+        "title": "Rename"
+      },
+      {
+        "command": "explorer2.copy",
+        "title": "Copy"
+      },
+      {
+        "command": "explorer2.cut",
+        "title": "Cut"
+      },
+      {
+        "command": "explorer2.paste",
+        "title": "Paste"
+      },
+      {
+        "command": "explorer2.openWithDefaultProgram",
+        "title": "Open"
+      },
+      {
+        "command": "favorites.delFromFavorites",
+        "title": "Del from favorite",
+        "icon": "$(search-remove)"
+      },
+      {
+        "command": "explorer2.collapse",
+        "title": "Collapse",
+        "icon": "$(search-collapse-results)"
+      },
+      {
+        "command": "explorer2.cloud",
+        "title": "Extend disk",
+        "icon": "$(cloud-upload)"
+      },
+      {
+        "command": "explorer2.refresh",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "opened.refresh",
+        "title": "Refresh"
+      },
+      {
+        "command": "favorites.open",
+        "title": "Open"
+      },
+      {
+        "command": "favorites.refresh",
+        "title": "Refresh"
+      },
+      {
+        "command": "opened.open",
+        "title": "Open"
+      },
+      {
+        "command": "explorer2.sortByName",
+        "title": "Sort by name"
+      },
+      {
+        "command": "explorer2.sortByNameDesc",
+        "title": "↑ Sort by name"
+      },
+      {
+        "command": "explorer2.sortByNameAsc",
+        "title": "↓ Sort by name"
+      },
+      {
+        "command": "explorer2.sortBySize",
+        "title": "Sort by size"
+      },
+      {
+        "command": "explorer2.sortBySizeDesc",
+        "title": "↑ Sort by size"
+      },
+      {
+        "command": "explorer2.sortBySizeAsc",
+        "title": "↓ Sort by size"
+      },
+      {
+        "command": "explorer2.sortByTime",
+        "title": "Sort by time"
+      },
+      {
+        "command": "explorer2.sortByTimeDesc",
+        "title": "↑ Sort by time"
+      },
+      {
+        "command": "explorer2.sortByTimeAsc",
+        "title": "↓ Sort by time"
+      },
+      {
+        "command": "explorer2.openFile",
+        "title": "Open File"
+      },
+      {
+        "command": "explorer2.goUpInTheTree",
+        "title": "Go up"
+      },
+      {
+        "command": "explorer2.openFolder",
+        "title": "Open Folder"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "explorer2.refresh",
+          "when": "view == explorer2",
+          "group": "navigation"
+        },
+        {
+          "command": "explorer2.collapse",
+          "when": "view == explorer2",
+          "group": "navigation"
+        },
+        {
+          "command": "explorer2.cloud",
+          "when": "view == explorer2",
+          "group": "navigation"
+        },
+        {
+          "command": "explorer2.sortByName",
+          "when": "view == explorer2 && explorer2.context.sortByName == true",
+          "group": "menu@0"
+        },
+        {
+          "command": "explorer2.sortByNameAsc",
+          "when": "view == explorer2 && explorer2.context.sortByNameDesc == true",
+          "group": "menu@0"
+        },
+        {
+          "command": "explorer2.sortByNameDesc",
+          "when": "view == explorer2 && explorer2.context.sortByNameAsc == true",
+          "group": "menu@0"
+        },
+        {
+          "command": "explorer2.sortBySize",
+          "when": "view == explorer2 && explorer2.context.sortBySize == true",
+          "group": "menu@1"
+        },
+        {
+          "command": "explorer2.sortBySizeDesc",
+          "when": "view == explorer2 && explorer2.context.sortBySizeAsc == true",
+          "group": "menu@1"
+        },
+        {
+          "command": "explorer2.sortBySizeAsc",
+          "when": "view == explorer2 && explorer2.context.sortBySizeDesc == true",
+          "group": "menu@1"
+        },
+        {
+          "command": "explorer2.sortByTime",
+          "when": "view == explorer2 && explorer2.context.sortByTime == true",
+          "group": "menu@2"
+        },
+        {
+          "command": "explorer2.sortByTimeDesc",
+          "when": "view == explorer2 && explorer2.context.sortByTimeAsc == true",
+          "group": "menu@2"
+        },
+        {
+          "command": "explorer2.sortByTimeAsc",
+          "when": "view == explorer2 && explorer2.context.sortByTimeDesc == true",
+          "group": "menu@2"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "a_few_seconds_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:a few seconds ago/"
+        },
+        {
+          "command": "a_minute_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:a minute ago/"
+        },
+        {
+          "command": "2_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:2 minutes ago/"
+        },
+        {
+          "command": "3_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:3 minutes ago/"
+        },
+        {
+          "command": "4_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:4 minutes ago/"
+        },
+        {
+          "command": "5_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:5 minutes ago/"
+        },
+        {
+          "command": "6_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:6 minutes ago/"
+        },
+        {
+          "command": "7_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:7 minutes ago/"
+        },
+        {
+          "command": "8_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:8 minutes ago/"
+        },
+        {
+          "command": "9_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:9 minutes ago/"
+        },
+        {
+          "command": "10_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:10 minutes ago/"
+        },
+        {
+          "command": "11_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:11 minutes ago/"
+        },
+        {
+          "command": "12_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:12 minutes ago/"
+        },
+        {
+          "command": "13_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:13 minutes ago/"
+        },
+        {
+          "command": "14_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:14 minutes ago/"
+        },
+        {
+          "command": "15_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:15 minutes ago/"
+        },
+        {
+          "command": "16_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:16 minutes ago/"
+        },
+        {
+          "command": "17_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:17 minutes ago/"
+        },
+        {
+          "command": "18_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:18 minutes ago/"
+        },
+        {
+          "command": "19_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:19 minutes ago/"
+        },
+        {
+          "command": "20_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:20 minutes ago/"
+        },
+        {
+          "command": "21_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:21 minutes ago/"
+        },
+        {
+          "command": "22_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:22 minutes ago/"
+        },
+        {
+          "command": "23_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:23 minutes ago/"
+        },
+        {
+          "command": "24_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:24 minutes ago/"
+        },
+        {
+          "command": "25_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:25 minutes ago/"
+        },
+        {
+          "command": "26_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:26 minutes ago/"
+        },
+        {
+          "command": "27_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:27 minutes ago/"
+        },
+        {
+          "command": "28_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:28 minutes ago/"
+        },
+        {
+          "command": "29_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:29 minutes ago/"
+        },
+        {
+          "command": "30_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:30 minutes ago/"
+        },
+        {
+          "command": "31_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:31 minutes ago/"
+        },
+        {
+          "command": "32_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:32 minutes ago/"
+        },
+        {
+          "command": "33_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:33 minutes ago/"
+        },
+        {
+          "command": "34_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:34 minutes ago/"
+        },
+        {
+          "command": "35_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:35 minutes ago/"
+        },
+        {
+          "command": "36_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:36 minutes ago/"
+        },
+        {
+          "command": "37_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:37 minutes ago/"
+        },
+        {
+          "command": "38_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:38 minutes ago/"
+        },
+        {
+          "command": "39_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:39 minutes ago/"
+        },
+        {
+          "command": "40_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:40 minutes ago/"
+        },
+        {
+          "command": "41_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:41 minutes ago/"
+        },
+        {
+          "command": "42_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:42 minutes ago/"
+        },
+        {
+          "command": "43_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:43 minutes ago/"
+        },
+        {
+          "command": "44_minutes_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:44 minutes ago/"
+        },
+        {
+          "command": "an_hour_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:an hour ago/"
+        },
+        {
+          "command": "2_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:2 hours ago/"
+        },
+        {
+          "command": "3_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:3 hours ago/"
+        },
+        {
+          "command": "4_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:4 hours ago/"
+        },
+        {
+          "command": "5_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:5 hours ago/"
+        },
+        {
+          "command": "6_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:6 hours ago/"
+        },
+        {
+          "command": "7_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:7 hours ago/"
+        },
+        {
+          "command": "8_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:8 hours ago/"
+        },
+        {
+          "command": "9_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:9 hours ago/"
+        },
+        {
+          "command": "10_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:10 hours ago/"
+        },
+        {
+          "command": "11_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:11 hours ago/"
+        },
+        {
+          "command": "12_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:12 hours ago/"
+        },
+        {
+          "command": "13_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:13 hours ago/"
+        },
+        {
+          "command": "14_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:14 hours ago/"
+        },
+        {
+          "command": "15_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:15 hours ago/"
+        },
+        {
+          "command": "16_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:16 hours ago/"
+        },
+        {
+          "command": "17_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:17 hours ago/"
+        },
+        {
+          "command": "18_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:18 hours ago/"
+        },
+        {
+          "command": "19_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:19 hours ago/"
+        },
+        {
+          "command": "20_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:20 hours ago/"
+        },
+        {
+          "command": "21_hours_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:21 hours ago/"
+        },
+        {
+          "command": "a_day_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:a day ago/"
+        },
+        {
+          "command": "2_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:2 days ago/"
+        },
+        {
+          "command": "3_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:3 days ago/"
+        },
+        {
+          "command": "4_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:4 days ago/"
+        },
+        {
+          "command": "5_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:5 days ago/"
+        },
+        {
+          "command": "6_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:6 days ago/"
+        },
+        {
+          "command": "7_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:7 days ago/"
+        },
+        {
+          "command": "8_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:8 days ago/"
+        },
+        {
+          "command": "9_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:9 days ago/"
+        },
+        {
+          "command": "10_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:10 days ago/"
+        },
+        {
+          "command": "11_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:11 days ago/"
+        },
+        {
+          "command": "12_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:12 days ago/"
+        },
+        {
+          "command": "13_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:13 days ago/"
+        },
+        {
+          "command": "14_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:14 days ago/"
+        },
+        {
+          "command": "15_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:15 days ago/"
+        },
+        {
+          "command": "16_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:16 days ago/"
+        },
+        {
+          "command": "17_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:17 days ago/"
+        },
+        {
+          "command": "18_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:18 days ago/"
+        },
+        {
+          "command": "19_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:19 days ago/"
+        },
+        {
+          "command": "20_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:20 days ago/"
+        },
+        {
+          "command": "21_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:21 days ago/"
+        },
+        {
+          "command": "22_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:22 days ago/"
+        },
+        {
+          "command": "23_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:23 days ago/"
+        },
+        {
+          "command": "24_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:24 days ago/"
+        },
+        {
+          "command": "25_days_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:25 days ago/"
+        },
+        {
+          "command": "a_month_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:a month ago/"
+        },
+        {
+          "command": "2_months_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:2 months ago/"
+        },
+        {
+          "command": "3_months_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:3 months ago/"
+        },
+        {
+          "command": "4_months_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:4 months ago/"
+        },
+        {
+          "command": "5_months_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:5 months ago/"
+        },
+        {
+          "command": "6_months_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:6 months ago/"
+        },
+        {
+          "command": "7_months_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:7 months ago/"
+        },
+        {
+          "command": "8_months_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:8 months ago/"
+        },
+        {
+          "command": "9_months_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:9 months ago/"
+        },
+        {
+          "command": "10_months_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:10 months ago/"
+        },
+        {
+          "command": "a_year_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:a year ago/"
+        },
+        {
+          "command": "2_years_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:2 years ago/"
+        },
+        {
+          "command": "3_years_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:3 years ago/"
+        },
+        {
+          "command": "4_years_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:4 years ago/"
+        },
+        {
+          "command": "5_years_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:5 years ago/"
+        },
+        {
+          "command": "6_years_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:6 years ago/"
+        },
+        {
+          "command": "7_years_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:7 years ago/"
+        },
+        {
+          "command": "8_years_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:8 years ago/"
+        },
+        {
+          "command": "9_years_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /modified:9 years ago/"
+        },
+        {
+          "command": "many_years_ago",
+          "group": "inline@0",
+          "when": "view == explorer2 && viewItem =~ /^(\\d{2,}) years ago$/"
+        },
+        {
+          "command": "explorer2.openWithDefaultProgram",
+          "group": "0_navigation@0",
+          "when": "view == explorer2"
+        },
+        {
+          "command": "explorer2.newFile",
+          "group": "1_navigation@1",
+          "when": "view == explorer2"
+        },
+        {
+          "command": "explorer2.newFolder",
+          "group": "1_navigation@1",
+          "when": "view == explorer2"
+        },
+        {
+          "command": "explorer2.rename",
+          "group": "1_navigation@1",
+          "when": "view == explorer2"
+        },
+        {
+          "command": "explorer2.delete",
+          "group": "1_navigation@2",
+          "when": "view == explorer2"
+        },
+        {
+          "command": "explorer2.copy",
+          "group": "1_navigation@3",
+          "when": "view == explorer2"
+        },
+        {
+          "command": "explorer2.cut",
+          "group": "1_navigation@4",
+          "when": "view == explorer2"
+        },
+        {
+          "command": "explorer2.paste",
+          "group": "1_navigation@5",
+          "when": "view == explorer2"
+        },
+        {
+          "command": "explorer2.addToFavorites",
+          "group": "2_navigation@6",
+          "when": "view == explorer2 && viewItem =~ /type:folder/"
+        },
+        {
+          "command": "opened.addToFavorites",
+          "group": "2_navigation@6",
+          "when": "view == opened"
+        },
+        {
+          "command": "favorites.delFromFavorites",
+          "group": "inline@0",
+          "when": "view == favorites"
+        },
+        {
+          "command": "opened.delFromOpened",
+          "group": "inline@0",
+          "when": "view == opened"
+        },
+        {
+          "command": "explorer2.sortByNameAsc",
+          "group": "inline@0",
+          "when": "viewItem == goUpInTheTree && explorer2.context.sortByNameDesc == true"
+        },
+        {
+          "command": "explorer2.sortByNameDesc",
+          "group": "inline@0",
+          "when": "viewItem == goUpInTheTree && explorer2.context.sortByNameAsc == true"
+        },
+        {
+          "command": "explorer2.sortBySizeDesc",
+          "group": "inline@0",
+          "when": "viewItem == goUpInTheTree && explorer2.context.sortBySizeAsc == true"
+        },
+        {
+          "command": "explorer2.sortBySizeAsc",
+          "group": "inline@0",
+          "when": "viewItem == goUpInTheTree && explorer2.context.sortBySizeDesc == true"
+        },
+        {
+          "command": "explorer2.sortByTimeDesc",
+          "group": "inline@0",
+          "when": "viewItem == goUpInTheTree && explorer2.context.sortByTimeAsc == true"
+        },
+        {
+          "command": "explorer2.sortByTimeAsc",
+          "group": "inline@0",
+          "when": "viewItem == goUpInTheTree && explorer2.context.sortByTimeDesc == true"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "devDependencies": {
+    "@types/bytes": "^3.1.1",
+    "@types/mkdirp": "^0.5.2",
+    "@types/node": "^16.11.7",
+    "@types/rimraf": "^2.0.2",
+    "@types/vscode": "^1.66.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.13.0",
+    "typescript": "^4.7.2"
+  },
+  "dependencies": {
+    "bytes": "^3.1.2",
+    "check-disk-space": "^3.3.1",
+    "jsonc-parser": "^0.4.2",
+    "minimist": "^1.2.6",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.29.4",
+    "open": "^8.4.0",
+    "rimraf": "^2.6.2",
+    "trash": "^8.1.0"
+  }
+}
