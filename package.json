@@ -2,7 +2,7 @@
   "name": "Explorer2",
   "displayName": "Explorer2",
   "description": "Explorer2",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "LeoBraine",
   "private": true,
   "license": "MIT",
@@ -641,10 +641,20 @@
       {
         "command": "explorer2.openFolder",
         "title": "Open Folder"
+      },
+      {
+        "command": "opened.deleteAll",
+        "title": "Remove All Opened",
+        "icon": "$(watch-expressions-remove-all)"
       }
     ],
     "menus": {
       "view/title": [
+        {
+          "command": "opened.deleteAll",
+          "when": "view == opened",
+          "group": "navigation"
+        },
         {
           "command": "explorer2.refresh",
           "when": "view == explorer2",

@@ -16,6 +16,8 @@ export class Opened {
     vscode.commands.registerCommand("opened.refresh", () => this.refresh());
     vscode.commands.registerCommand("opened.open", (fsPath) => this.open(fsPath));
     vscode.commands.registerCommand("opened.delFromOpened", (element) => this.delFromOpened(element));
+    vscode.commands.registerCommand("opened.deleteAll", (element) => this.delAllOpened());
+    
   }
 
   private refresh(): void {
@@ -29,6 +31,12 @@ export class Opened {
 
   private delFromOpened(element: any): void {
     config.opened = config.opened.filter((open) => open !== element);
+    save(this.context);
+    this.treeDataProvider.refresh();
+  }
+
+  private delAllOpened(): void {
+    config.opened = [];
     save(this.context);
     this.treeDataProvider.refresh();
   }
