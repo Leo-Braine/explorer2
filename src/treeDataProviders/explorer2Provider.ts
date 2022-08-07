@@ -167,7 +167,11 @@ export class explorer2Provider implements vscode.TreeDataProvider<Entry> {
     treeItem.contextValue = `modified:${moment(element.mtime).fromNow()}`;
 
     if (element.type === vscode.FileType.File) {
-      treeItem.command = { command: "explorer2.openFile", title: "Open File", arguments: [element.uri] };
+      treeItem.command = {
+        command: "vscode.open",
+        title: "Open File",
+        arguments: [vscode.Uri.parse(path.join(config.mainRootDirectory, element.uri.fsPath))],
+      };
       treeItem.contextValue += ";type:file";
     } else {
       treeItem.command = { command: "explorer2.openFolder", title: "Open Folder", arguments: [element.uri] };

@@ -16,8 +16,7 @@ export class Opened {
     vscode.commands.registerCommand("opened.refresh", () => this.refresh());
     vscode.commands.registerCommand("opened.open", (fsPath) => this.open(fsPath));
     vscode.commands.registerCommand("opened.delFromOpened", (element) => this.delFromOpened(element));
-    vscode.commands.registerCommand("opened.deleteAll", (element) => this.delAllOpened());
-    
+    vscode.commands.registerCommand("opened.deleteAll", () => this.delAllOpened());
   }
 
   private refresh(): void {

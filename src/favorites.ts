@@ -22,7 +22,6 @@ export class Favorites {
     
     this.treeDataProvider.refresh();
   }
-  Ï;
 
   private open(fsPath: string): void {
     
