@@ -2,7 +2,7 @@
   "name": "Explorer2",
   "displayName": "Explorer2",
   "description": "Explorer2",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "publisher": "LeoBraine",
   "private": true,
   "license": "MIT",
@@ -1282,6 +1282,11 @@
           "when": "view == explorer2"
         },
         {
+          "command": "explorer2.rename",
+          "group": "0_navigation@1",
+          "when": "view == explorer2"
+        },
+        {
           "command": "explorer2.newFile",
           "group": "1_navigation@1",
           "when": "view == explorer2"
@@ -1292,38 +1297,33 @@
           "when": "view == explorer2"
         },
         {
-          "command": "explorer2.rename",
-          "group": "1_navigation@1",
-          "when": "view == explorer2"
-        },
-        {
           "command": "explorer2.delete",
-          "group": "1_navigation@2",
+          "group": "2_navigation@2",
           "when": "view == explorer2"
         },
         {
           "command": "explorer2.copy",
-          "group": "1_navigation@3",
+          "group": "3_navigation@3",
           "when": "view == explorer2"
         },
         {
           "command": "explorer2.cut",
-          "group": "1_navigation@4",
+          "group": "3_navigation@4",
           "when": "view == explorer2"
         },
         {
           "command": "explorer2.paste",
-          "group": "1_navigation@5",
+          "group": "3_navigation@5",
           "when": "view == explorer2"
         },
         {
           "command": "explorer2.addToFavorites",
-          "group": "2_navigation@7",
+          "group": "4_navigation@7",
           "when": "view == explorer2 && viewItem =~ /type:folder/"
         },
         {
           "command": "explorer2.copyPath",
-          "group": "2_navigation@6",
+          "group": "5_navigation@6",
           "when": "view == explorer2"
         },
         {
