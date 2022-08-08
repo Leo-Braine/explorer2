@@ -93,16 +93,23 @@ export class Explorer2 {
     });
 
     vscode.commands.registerCommand("explorer2.delete", async (resource) => {
-      if (!resource.uri.fsPath) {
-        return;
+      if (resource.id !== "goUpInTheTree") {
+        if (!resource.uri.fsPath) {
+          return;
+        }
+        const newUri = vscode.Uri.parse(path.join(config.mainRootDirectory, resource.uri.fsPath));
+        await vscode.workspace.fs.delete(newUri, {
+          recursive: true,
+          useTrash: true,
+        });
+        this.refresh();
+      } else {
+        await vscode.workspace.fs.delete(vscode.Uri.parse(config.mainRootDirectory), {
+          recursive: true,
+          useTrash: true,
+        });
+        this.goUpInTheTree();
       }
-      const newUri = vscode.Uri.parse(path.join(config.mainRootDirectory, resource.uri.fsPath));
-
-      await vscode.workspace.fs.delete(newUri, {
-        recursive: false,
-        useTrash: true,
-      });
-      this.refresh();
     });
 
     vscode.commands.registerCommand("explorer2.rename", (resource) => {
