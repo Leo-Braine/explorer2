@@ -140,6 +140,7 @@ export class Explorer2 {
     vscode.commands.registerCommand("explorer2.collapse", () => this.collapse());
     vscode.commands.registerCommand("explorer2.goUpInTheTree", () => this.goUpInTheTree());
     vscode.commands.registerCommand("explorer2.addToFavorites", (element) => this.addToFavorites(element));
+    vscode.commands.registerCommand("explorer2.copyPath", (element) => this.copyPath(element));
     vscode.commands.registerCommand("opened.addToFavorites", (element) => this.addToFavoritesFromOpened(element));
     vscode.commands.registerCommand("explorer2.openWithDefaultProgram", (element) =>
       this.openWithDefaultProgram(element)
@@ -371,6 +372,10 @@ export class Explorer2 {
 
       vscode.commands.executeCommand("favorites.refresh");
     }
+  }
+
+  private async copyPath(element: Entry): Promise<void> {
+    await vscode.env.clipboard.writeText(path.join(config.mainRootDirectory, element.uri.fsPath));
   }
 
   private addToFavoritesFromOpened(element: string): void {

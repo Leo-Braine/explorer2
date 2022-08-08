@@ -2,7 +2,7 @@
   "name": "Explorer2",
   "displayName": "Explorer2",
   "description": "Explorer2",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "publisher": "LeoBraine",
   "private": true,
   "license": "MIT",
@@ -521,6 +521,10 @@
       {
         "command": "explorer2.addToFavorites",
         "title": "Add to favorite"
+      },
+      {
+        "command": "explorer2.copyPath",
+        "title": "Copy path"
       },
       {
         "command": "opened.addToFavorites",
@@ -1314,8 +1318,13 @@
         },
         {
           "command": "explorer2.addToFavorites",
-          "group": "2_navigation@6",
+          "group": "2_navigation@7",
           "when": "view == explorer2 && viewItem =~ /type:folder/"
+        },
+        {
+          "command": "explorer2.copyPath",
+          "group": "2_navigation@6",
+          "when": "view == explorer2"
         },
         {
           "command": "opened.addToFavorites",
