@@ -1,5 +1,5 @@
 import checkDiskSpace from "check-disk-space";
-import { closeSync, copyFileSync, mkdirSync, openSync, renameSync } from "fs";
+import { closeSync, mkdirSync, openSync, renameSync } from "fs";
 import * as path from "path";
 import * as vscode from "vscode";
 import { save } from "./dataSource/save";
@@ -10,6 +10,7 @@ import { isFileExist } from "./services/isFileExist";
 import { explorer2Provider } from "./treeDataProviders/explorer2Provider";
 import bytes = require("bytes");
 import openWithProgram = require("open");
+import fse = require("fs-extra");
 
 export class Explorer2 {
   private treeDataProvider: explorer2Provider;
@@ -70,18 +71,28 @@ export class Explorer2 {
 
     vscode.commands.registerCommand("explorer2.cut", (resource) => {
       config.copiedFilePath = "";
-      config.cutFilePath = path.join(config.mainRootDirectory, resource.uri.fsPath);
+      if (resource.id === "goUpInTheTree") {
+        config.cutFilePath = config.mainRootDirectory;
+      } else {
+        config.cutFilePath = path.join(config.mainRootDirectory, resource.uri.fsPath);
+      }
     });
+
     vscode.commands.registerCommand("explorer2.copy", (resource) => {
       config.cutFilePath = "";
-      config.copiedFilePath = path.join(config.mainRootDirectory, resource.uri.fsPath);
+      if (resource.id === "goUpInTheTree") {
+        config.copiedFilePath = config.mainRootDirectory;
+      } else {
+        config.copiedFilePath = path.join(config.mainRootDirectory, resource.uri.fsPath);
+      }
     });
+
     vscode.commands.registerCommand("explorer2.paste", (resource) => {
       if (config.copiedFilePath) {
         const constCopiedFileName = path.basename(config.copiedFilePath);
         const newPath = this.findNewPathForExistsFile(path.join(config.mainRootDirectory, constCopiedFileName));
 
-        copyFileSync(config.copiedFilePath, newPath);
+        fse.copySync(config.copiedFilePath, newPath);
         this.refresh();
       } else if (config.cutFilePath) {
         const constCopiedFileName = path.basename(config.cutFilePath);
@@ -113,23 +124,40 @@ export class Explorer2 {
     });
 
     vscode.commands.registerCommand("explorer2.rename", (resource) => {
-      if (!resource.uri.fsPath) {
-        return;
+      let oldFileName = "";
+      if (resource.id === "goUpInTheTree") {
+        oldFileName = path.basename(config.mainRootDirectory);
+      } else {
+        if (!resource.uri.fsPath) {
+          return;
+        }
+        oldFileName = path.basename(resource.uri.fsPath);
       }
 
       vscode.window
         .showInputBox({
           placeHolder: "New name",
-          value: path.basename(resource.uri.fsPath),
+          value: path.basename(oldFileName),
         })
         .then((value) => {
           if (!value) return;
-          const oldPath = path.join(config.mainRootDirectory, resource.uri.fsPath);
-          const newPath = path.join(config.mainRootDirectory, value);
+          let oldPath: string;
+          let newPath: string;
+          if (resource.id === "goUpInTheTree") {
+            oldPath = path.join(config.mainRootDirectory, "../", oldFileName);
+            newPath = path.join(config.mainRootDirectory, "../", value);
+          } else {
+            oldPath = path.join(config.mainRootDirectory, oldFileName);
+            newPath = path.join(config.mainRootDirectory, value);
+          }
+
           if (isFileExist(newPath)) {
             vscode.window.showWarningMessage(`${newPath} is already taken. Please choose a different name.`);
           } else {
             renameSync(oldPath, newPath);
+            if (resource.id === "goUpInTheTree") {
+              config.mainRootDirectory = newPath;
+            }
             this.refresh();
           }
         });
@@ -375,7 +403,11 @@ export class Explorer2 {
   }
 
   private async copyPath(element: Entry): Promise<void> {
-    await vscode.env.clipboard.writeText(path.join(config.mainRootDirectory, element.uri.fsPath));
+    if (element.id === "goUpInTheTree") {
+      await vscode.env.clipboard.writeText(config.mainRootDirectory);
+    } else {
+      await vscode.env.clipboard.writeText(path.join(config.mainRootDirectory, element.uri.fsPath));
+    }
   }
 
   private addToFavoritesFromOpened(element: string): void {
@@ -387,7 +419,11 @@ export class Explorer2 {
   }
 
   private openWithDefaultProgram(element: Entry): void {
-    openWithProgram(path.join(config.mainRootDirectory, element.uri.fsPath));
+    if (element.id === "goUpInTheTree") {
+      openWithProgram(config.mainRootDirectory);
+    } else {
+      openWithProgram(path.join(config.mainRootDirectory, element.uri.fsPath));
+    }
   }
 
   private sortByTimeAsc(): void {
