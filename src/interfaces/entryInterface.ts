@@ -5,5 +5,7 @@ export interface Entry {
   uri: vscode.Uri;
   type: vscode.FileType;
   mtime: number;
+  ctime: number;
   size: number;
+  mode: number;
 }

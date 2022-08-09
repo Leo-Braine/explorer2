@@ -13,9 +13,9 @@ const SORT_OPTIONS = ["sortByName", "sortByTime", "sortBySize"];
 interface File {
   name: string;
   type: FileType;
-  mtime: number;
   ctime: number;
-  chmod: string;
+  mtime: number;
+  mode: string;
   size: number;
 }
 
@@ -60,13 +60,14 @@ export class explorer2Provider implements vscode.TreeDataProvider<Entry> {
       } else {
         fileType = FileType.Unknown;
       }
+      console.log(`src/treeDataProviders/explorer2Provider.ts:63`, stat);
       const myFile: File = {
         name: file.name,
         type: fileType,
         size: stat.size,
         mtime: stat.mtimeMs,
-        ctime: stat.atimeMs,
-        chmod: stat.mode.toFixed(),
+        ctime: stat.birthtimeMs,
+        mode: stat.mode.toFixed(),
       };
       result.push(myFile);
     }
@@ -117,8 +118,10 @@ export class explorer2Provider implements vscode.TreeDataProvider<Entry> {
     children = files.map((file) => ({
       uri: vscode.Uri.file(path.join(rootPath, file.name)),
       type: file.type,
+      ctime: file.ctime,
       mtime: file.mtime,
       size: file.size,
+      mode: file.mode
     }));
 
     if (config.sorting === "nameAsc") {
@@ -180,7 +183,14 @@ export class explorer2Provider implements vscode.TreeDataProvider<Entry> {
     if (element.type === vscode.FileType.File) {
       treeItem.description = bytes(element.size);
     }
-    treeItem.tooltip = moment(element.mtime).format("dddd, MMMM Do YYYY, h:mm:ss a");
+    let tooltip: string;
+    tooltip = "Created: " + moment(element.ctime).format("dddd, MMMM Do YYYY, h:mm:ss a")+"\n";
+    tooltip += "Modified: " + moment(element.mtime).format("dddd, MMMM Do YYYY, h:mm:ss a")+"\n";
+    tooltip += "Mode: " + '0' + (element.mode & parseInt('777', 8)).toString(8) +"\n";
+    tooltip += "Size: " + bytes(element.size) +"\n";
+    
+
+    treeItem.tooltip = tooltip;
 
     return treeItem;
   }
