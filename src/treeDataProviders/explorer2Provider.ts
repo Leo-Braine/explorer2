@@ -180,15 +180,16 @@ export class explorer2Provider implements vscode.TreeDataProvider<Entry> {
       treeItem.command = { command: "explorer2.openFolder", title: "Open Folder", arguments: [element.uri] };
       treeItem.contextValue += ";type:folder";
     }
-    if (element.type === vscode.FileType.File) {
-      treeItem.description = bytes(element.size);
-    }
+
     let tooltip: string;
     tooltip = "Created: " + moment(element.ctime).format("dddd, MMMM Do YYYY, h:mm:ss a")+"\n";
     tooltip += "Modified: " + moment(element.mtime).format("dddd, MMMM Do YYYY, h:mm:ss a")+"\n";
     tooltip += "Mode: " + '0' + (element.mode & parseInt('777', 8)).toString(8) +"\n";
-    tooltip += "Size: " + bytes(element.size) +"\n";
-    
+  
+    if (element.type === vscode.FileType.File) {
+      treeItem.description = bytes(element.size);
+      tooltip += "Size: " + bytes(element.size) +"\n";
+    }
 
     treeItem.tooltip = tooltip;
 
